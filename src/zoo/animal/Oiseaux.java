@@ -17,4 +17,9 @@ public abstract class Oiseaux extends Animal {
     public void faireBruit() {
         System.out.println("CUI CUI CUI!");
     }
+
+    @Override
+    public String toString() {
+        return "L'oiseau "+super.toString();
+    }
 }

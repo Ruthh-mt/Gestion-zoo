@@ -10,4 +10,8 @@ public abstract class Animal {
     public abstract void seDeplacer();
     public abstract void faireBruit();
 
+    @Override
+    public String toString() {
+        return "de nom "+this.name+" ";
+    }
 }

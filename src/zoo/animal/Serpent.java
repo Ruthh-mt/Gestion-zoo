@@ -16,6 +16,9 @@ public abstract class Serpent extends Animal {
     public void faireBruit() {
         System.out.println("SSSSSSSSS !");
     }
+    public String toString() {
+        return "Le serpent "+super.toString();
+    }
 
 
 }

@@ -48,11 +48,6 @@ public class Enclos {
 
     @Override
     public String toString() {
-        return "Enclos{" +
-                "animal=" + animal +
-                ", proprete=" + proprete +
-                ", capacite=" + capacite +
-                ", nom='" + nom + '\'' +
-                '}';
+        return "L'enclos "+this.nom + " a l'animal  "+ this.animal.toString() + "qui y habite ";
     }
 }

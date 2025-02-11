@@ -16,4 +16,9 @@ public abstract class Lion extends Animal {
     public void faireBruit() {
         System.out.println("ROARRRR!");
     }
+
+    @Override
+    public String toString() {
+        return "Le lion "+super.toString();
+    }
 }
