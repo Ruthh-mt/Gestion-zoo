@@ -11,23 +11,11 @@ public abstract class Animal {
         this.espece = espece;
     }
 
-    public abstract void manger(String nourriture);
+    public abstract void manger();
 
     public abstract void seDeplacer();
 
     public abstract void faireBruit();
-
-    public boolean estMalade() {
-        return malade;
-    }
-
-    public void tomberMalade() {
-        malade = true;
-    }
-
-    public void guerir() {
-        malade = false;
-    }
 
     public abstract void faireUnTour();
 

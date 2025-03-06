@@ -1,12 +1,12 @@
 package zoo.animal;
 
-public abstract class Lion extends Animal {
+public class Lion extends Animal {
 
     public Lion(String nom, String espece) {
         super(nom,espece);
     }
-    public void manger(String nourriture) {
-        System.out.println("Mange "+ nourriture);
+    public void manger() {
+        System.out.println("*Mange de la viande*");
     }
 
     public void seDeplacer() {
@@ -25,6 +25,6 @@ public abstract class Lion extends Animal {
 
     @Override
     public String toString() {
-        return "Le " + super.toString()+(this.malade?" Il est malade ":" Il est en bonne santé");
+        return "Le " + super.toString();
     }
 }

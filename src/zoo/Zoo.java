@@ -1,43 +1,50 @@
 package zoo;
+import zoo.personne.Personne;
+import zoo.personne.Soigneur;
+import zoo.personne.Visiteur;
 
-import zoo.Personne.Soigneur;
-import zoo.Personne.Visiteur;
-import zoo.*;
-import java.util.Random;
 import java.util.ArrayList;
 
 public class Zoo {
     private String nom;
-    private String ville;
     private boolean debutJournee;
     private ArrayList<Visiteur>visiteur;
     private ArrayList <Soigneur> soigneurs;
     private ArrayList <Enclos> enclos;
 
-    private int chiffreAffaire=0;
+    private double chiffreAffaire=0;
 
-    public Zoo(String nom, String ville){
+    public Zoo(String nom){
         this.nom=nom;
-        this.ville=ville;
         this.debutJournee=true;
         this.visiteur=new ArrayList<>();
         this.soigneurs=new ArrayList<>();
         this.enclos=new ArrayList<>();
 
     }
-    public void ajoutVisiteur(Visiteur v) {
+    public void ajoutVisiteur(Personne v) {
         this.visiteur.add(v);
-        v.payer(v.getAge() < 16 ? 5.0 : 10.0);
+        chiffreAffaire+= v.getPrix();
         System.out.println(v.toString()+ " A bien été acceuilli ");
     }
-    public void ajoutSoigneur(Soigneur s) {
+    public void ajoutSoigneur(Personne s) {
         this.soigneurs.add(s);
         System.out.println(s.toString() + " A ete embauché ");
     }
     public void ajoutEnclos(Enclos e) {
         enclos.add(e);
     }
-
+    public void afficherInfosZoo() {
+        System.out.println("Bienvenue au " + nom + " !");
+        System.out.println("Nombre total de visiteurs : " + visiteur.size());
+        System.out.println("Revenu total : " + chiffreAffaire);
+        System.out.println("\nEnclos :");
+        for (Enclos enclos : enclos) {
+            System.out.println(enclos.toString());
+            System.out.println("  Animaux :");
+            enclos.afficherLesAnimaux();
+        }
+    }
 
 
 
@@ -62,6 +69,10 @@ public class Zoo {
     public void supprimerEnclos(Enclos e) {
         enclos.remove(e);
         System.out.println("Cette enclos a ete detruit :[ ");
+    }
+
+    public double getCA(){
+        return chiffreAffaire;
     }
 
 

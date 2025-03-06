@@ -1,17 +1,15 @@
-package zoo.Personne;
+package zoo.personne;
 
 public class Personne {
-    private String nom;
     private String prenom;
 
-    public Personne(String nom, String prenom) {
-        this.nom = nom;
+    public Personne( String prenom) {
         this.prenom = prenom;
     }
 
     @Override
     public String toString() {
-        return prenom+" "+nom;
+        return prenom+" ";
     }
 
     public String getPrenom() {

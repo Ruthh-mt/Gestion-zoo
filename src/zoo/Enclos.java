@@ -15,8 +15,12 @@ public class Enclos {
         this.nom = nom;
     }
     public void ajouterAnimal(Animal a) {
+        if(animals.size()< capacite) {
         animals.add(a);
         System.out.println("L'animal est ajouté dans l'enclos ");
+        } else {
+            System.out.println("l'enclos est plein .");
+        }
     }
     public void retirerAnimal(Animal a) {
         animals.remove(a);
@@ -26,38 +30,35 @@ public class Enclos {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
     public int getProprete() {
         return proprete;
-    }
-
-    public void setProprete(int proprete) {
-        this.proprete = proprete;
     }
 
     public int getCapacite() {
         return capacite;
     }
-
-    public void setCapacite(int capacite) {
-        this.capacite = capacite;
+    public void afficherLesAnimaux(){
+        System.out.println(
+                "Il y a "+animals.size()+ " animaux dans l'enlos :: ");
+        for(Animal a : animals){
+            System.out.println(a.toString());
+        }
     }
+
 
     @Override
     public String toString() {
         return "L'enclos "+this.nom + " a "+ animals.size() + " d'animaux qui y habite "+'\n';
     }
 
-    public int rendreSale(){
+    public void salir(){
         this.proprete= this.proprete - 1;
-        return this.proprete;
+        System.out.println("Lenclos est devenu moins propres");
     }
-    public int RendrePropres(){
-        this.proprete= this.proprete + 1;
-        return this.proprete;
+    public void nettoyer(){
+        this.proprete= 5;
+        System.out.println("l'enclos est tout propre");
     }
+
 
 }
