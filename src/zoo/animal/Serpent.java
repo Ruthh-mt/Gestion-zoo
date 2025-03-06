@@ -1,12 +1,8 @@
 package zoo.animal;
 
 public abstract class Serpent extends Animal {
-    public Serpent(String nom,boolean malade) {
-        super(nom,malade);
-    }
-    public Serpent(String name) {
-        super(name);
-        this.malade =false;
+    public Serpent(String nom,String espece) {
+        super(nom,espece);
     }
     public void manger(String nourriture) {
         System.out.println("Gobe "+ nourriture);
@@ -21,12 +17,6 @@ public abstract class Serpent extends Animal {
         System.out.println("SSSSSSSSS !");
     }
 
-    public void malade() {
-        this.malade = true;
-    }
-    public void pasMalade(){
-        this.malade = false;
-    }
     @Override
     public void faireUnTour() {
         System.out.println("*Fait un coeur sur le sol*");
@@ -34,7 +24,7 @@ public abstract class Serpent extends Animal {
     }
 
     public String toString() {
-        return "Le serpent "+super.toString()+(this.malade?" Il est malade ":" Il est en bonne santé");
+        return "Le "+super.toString()+(this.malade?" Il est malade ":" Il est en bonne santé");
     }
 
 

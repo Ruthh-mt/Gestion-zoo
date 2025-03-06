@@ -13,4 +13,8 @@ public class Personne {
     public String toString() {
         return prenom+" "+nom;
     }
+
+    public String getPrenom() {
+        return prenom;
+    }
 }

@@ -1,7 +1,6 @@
 package zoo.Personne;
 import zoo.animal.*;
 import zoo.*;
-import java.util.Random;
 
 public class Soigneur extends Personne {
     private String specialite;
@@ -20,14 +19,16 @@ public class Soigneur extends Personne {
         this.animal=animal;
     }
 
-    public void diagnostic(Animal animal) {
-        int random = new Random().nextInt(2);
-        if (random == 0) {
-            animal.pasMalade();
-        }
-        else{
-            animal.malade();
-        }
+    public void soigner (Animal animal) {
+     if(animal.getEspece().equals(this.specialite)){
+         if(animal.estMalade()){
+             System.out.println(super.getPrenom()+" a soigné "+ animal.getNom());
+         } else{
+             System.out.println(animal.getNom() +" n'est pas malade");
+         }
+     } else{
+         System.out.println(super.getPrenom()+ "ne peut pas soigner cet animal");
+     }
     }
 
     public void rendreDisponible() {

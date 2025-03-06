@@ -1,27 +1,46 @@
 package zoo.animal;
 
 public abstract class Animal {
-    private String name;
+    private String nom;
+    private String espece;
     protected boolean malade;
-    public Animal(String name, boolean malade) {
-        this.name = name;
-        this.malade =malade;
-    }
-    public Animal(String name) {
-        this.name = name;
-        this.malade =false;
+
+    public Animal(String nom, String espece) {
+        this.nom = nom;
+        this.malade = false;
+        this.espece = espece;
     }
 
     public abstract void manger(String nourriture);
+
     public abstract void seDeplacer();
+
     public abstract void faireBruit();
-    public abstract void malade();
-    public abstract void pasMalade();
+
+    public boolean estMalade() {
+        return malade;
+    }
+
+    public void tomberMalade() {
+        malade = true;
+    }
+
+    public void guerir() {
+        malade = false;
+    }
+
     public abstract void faireUnTour();
 
     @Override
     public String toString() {
-        return "de nom "+this.name+" ";
+        return this.espece + " de nom " + this.nom + " ";
     }
 
+    public String getEspece() {
+        return espece;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }

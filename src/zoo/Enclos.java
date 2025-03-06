@@ -9,8 +9,8 @@ public class Enclos {
     private int capacite;
     private String nom;
     private ArrayList<Animal> animals;
-    public Enclos(int proprete, int capacite, String nom) {
-        this.proprete = proprete;
+    public Enclos( int capacite, String nom) {
+        this.proprete = 5;
         this.capacite = capacite;
         this.nom = nom;
     }
