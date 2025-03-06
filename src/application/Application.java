@@ -1,31 +1,21 @@
 package application;
-
+import java.util.Scanner;
 import zoo.*;
 import zoo.animal.*;
-import zoo.personne.Personne;
-import zoo.personne.Soigneur;
-import zoo.personne.Visiteur;
+import zoo.personne.*;
 
 public class Application {
     public static void main(String[] args) {
+        Scanner clavier = new Scanner(System.in);
         Zoo zoo=new Zoo("Jardin des Plantes");
 
         //creation de soigneur
-        Personne soigneur1 = new Soigneur("Eve","Serpent");
-        Personne soigneur2= new Soigneur("David","Lion");
-        Personne soigneur3= new Soigneur("Paulette","Oiseau");
+        Soigneur soigneur1 = new Soigneur("Eve","Serpent");
+        Soigneur soigneur2= new Soigneur("David","Lion");
+        Soigneur soigneur3= new Soigneur("Paulette","Oiseau");
         zoo.ajoutSoigneur(soigneur1);
         zoo.ajoutSoigneur(soigneur2);
         zoo.ajoutSoigneur(soigneur3);
-        //crreation de visiteur
-        Personne visiteur1 = new Visiteur("Maite",25);
-        Personne visiteur2= new Visiteur("Vincent",40);
-        Personne visiteur3= new Visiteur("Juliette",4);
-        Visiteur visiteur4 = new Visiteur("Alice", 12);
-        zoo.ajoutVisiteur(visiteur1);
-        zoo.ajoutVisiteur(visiteur2);
-        zoo.ajoutVisiteur(visiteur3);
-        zoo.ajoutVisiteur(visiteur4);
         //creation d'enclos
         Enclos enclosLions = new Enclos( 3,"Enclos des Lions");
         Enclos enclosOiseaux = new Enclos(5,"Volière");
@@ -49,6 +39,37 @@ public class Application {
         enclosLions.ajouterAnimal(lion2);
         enclosLions.ajouterAnimal(lion3);
         // boucle while pour le programme
+        while(true){
+            System.out.println("Bienvenue dans le systeme de gestion du zoo");
+            System.out.println("Que souhaitez-vous faire ?");
+            System.out.println("1. Afficher les informations du zoo");
+            System.out.println("2. Ajouter un visiteur");
+            System.out.println("3. Embocher un soigneur ");
+            System.out.println("4. Construire un enclos");
+            System.out.println("5. Faire un spectacle");
+            System.out.println("6. Supprimer");
+            System.out.println("7. Finir la journée");
+            System.out.println("8. Quitter");
+            int choix = clavier.nextInt();
+
+            switch(choix){
+                case 1:
+                    zoo.afficherInfosZoo();
+                    break;
+                    case 2:
+                        System.out.println("Veuillez entrer les infos du visiteur");
+                        String nom=clavier.nextLine();
+                        int age =clavier.nextInt();
+                        clavier.nextLine();
+                        Visiteur newVisiteur = new Visiteur(nom,age);
+                        zoo.ajoutVisiteur(newVisiteur);
+                        System.out.println( nom+ "est entré dans le zoo");
+                        break;
+                        case 3:
+
+            }
+
+        }
 
     }
 }

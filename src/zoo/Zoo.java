@@ -22,12 +22,12 @@ public class Zoo {
         this.enclos=new ArrayList<>();
 
     }
-    public void ajoutVisiteur(Personne v) {
+    public void ajoutVisiteur(Visiteur v) {
         this.visiteur.add(v);
         chiffreAffaire+= v.getPrix();
         System.out.println(v.toString()+ " A bien été acceuilli ");
     }
-    public void ajoutSoigneur(Personne s) {
+    public void ajoutSoigneur(Soigneur s) {
         this.soigneurs.add(s);
         System.out.println(s.toString() + " A ete embauché ");
     }
